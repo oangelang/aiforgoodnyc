@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Social Good NYC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #FFFDF8; color: #7A4830; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 62px; padding: 0 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,253,248,0.88); backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid rgba(250,208,122,0.4);
+}
+.logo-type { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; color: #A85E0A; text-decoration: none; }
+.logo-type em { font-style: italic; font-weight: 400; color: #D9695C; }
+.nav-right { display: flex; align-items: center; gap: 28px; }
+.nav-link { font-size: 11.5px; font-weight: 700; color: #8C6050; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+.nav-link:hover { color: #D9891A; }
+
+/* HERO — bolder overlay */
+.hero { min-height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background-image: url('assets/images/hero-sky.png'); background-size: cover; background-position: center 25%; }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,248,220,0.25) 0%, rgba(255,240,200,0.38) 45%, rgba(255,238,195,0.72) 100%); }
+.hero-inner { position: relative; z-index: 1; padding: 0 24px; max-width: 820px; }
+.hero-kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C87A10; margin-bottom: 28px; }
+.kicker-dot { width: 7px; height: 7px; border-radius: 50%; background: #F5B445; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(56px, 9vw, 106px); font-weight: 600; line-height: 0.94; color: #5C1E04; letter-spacing: -0.03em; margin-bottom: 8px; }
+h1 em { font-style: italic; font-weight: 300; color: #C84030; display: block; font-size: clamp(46px, 7vw, 84px); }
+.hero-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(19px, 2.4vw, 26px); font-weight: 300; font-style: italic; color: #9A5830; line-height: 1.45; margin-top: 20px; }
+.scroll-hint { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(156,96,60,0.6); animation: bob 2.2s ease-in-out infinite; }
+@keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(6px);} }
+.scroll-line { width: 0.5px; height: 36px; background: rgba(200,140,80,0.4); }
+
+/* THESIS */
+.thesis { background: #FFFDF8; padding: 96px 52px; max-width: 1100px; margin: 0 auto; }
+.thesis-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: center; }
+.thesis-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D4A020; margin-bottom: 14px; }
+.thesis-num { font-family: 'Cormorant Garamond', serif; font-size: 120px; font-weight: 600; color: rgba(245,180,69,0.18); line-height: 1; letter-spacing: -0.05em; }
+.thesis-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 50px); font-weight: 600; color: #5C1E04; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
+.thesis-headline em { font-style: italic; font-weight: 300; color: #C84030; }
+.thesis-body { font-size: 15px; line-height: 1.78; color: #7A4830; }
+.thesis-body strong { color: #5C1E04; font-weight: 700; }
+
+/* QUOTE — Rothko bolder */
+.quote-strip { position: relative; overflow: hidden; padding: 96px 52px; text-align: center; }
+.quote-strip-bg { position: absolute; inset: 0; background-image: url('assets/images/rothko.png'); background-size: cover; background-position: center; }
+.quote-strip-bg::after { content:''; position:absolute; inset:0; background: rgba(255,244,220,0.52); }
+.quote-strip-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+.quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 100px; font-weight: 300; color: rgba(200,64,48,0.3); line-height: 0.5; margin-bottom: 10px; display: block; }
+.pull-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 50px); font-weight: 300; font-style: italic; color: #5C1E04; line-height: 1.3; margin-bottom: 28px; }
+.pull-quote strong { font-style: normal; font-weight: 600; color: #A02010; }
+.quote-source { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B07040; }
+
+/* PROOF */
+.proof-strip { background: #FEF0CC; border-top: 1px solid rgba(220,160,60,0.35); border-bottom: 1px solid rgba(220,160,60,0.35); padding: 72px 52px; }
+.proof-inner { max-width: 1100px; margin: 0 auto; }
+.proof-header { margin-bottom: 48px; }
+.section-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #B07040; margin-bottom: 14px; }
+.section-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4.5vw, 56px); font-weight: 600; line-height: 1.05; color: #5C1E04; letter-spacing: -0.02em; }
+.section-h2 em { font-style: italic; font-weight: 300; color: #C84030; }
+.proof-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.proof-card { background: #FFFDF8; border: 1px solid rgba(210,150,50,0.4); border-radius: 16px; padding: 30px 28px; transition: transform 0.2s; }
+.proof-card:hover { transform: translateY(-3px); }
+.proof-domain { font-size: 9.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #B07040; margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
+.proof-domain-dot { width: 5px; height: 5px; border-radius: 50%; background: #F0A020; }
+.proof-stat { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 600; color: #C87010; letter-spacing: -0.03em; line-height: 1; margin-bottom: 8px; display: block; }
+.proof-headline { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: #5C1E04; line-height: 1.15; margin-bottom: 12px; letter-spacing: -0.01em; }
+.proof-body { font-size: 13px; line-height: 1.7; color: #7A5030; margin-bottom: 16px; }
+.proof-source { font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B07040; }
+
+/* PILLARS */
+.pillars-section { background: #FFFDF8; padding: 96px 52px; }
+.pillars-header { text-align: center; margin-bottom: 56px; }
+.pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
+.pillar-card { border-radius: 20px; padding: 40px 34px; position: relative; overflow: hidden; transition: transform 0.25s; }
+.pillar-card:hover { transform: translateY(-4px); }
+.pillar-card.live { background: #FDE8A0; border: 1.5px solid rgba(210,150,30,0.6); }
+.pillar-card.soon { background: #FEF6E4; border: 1px solid rgba(220,170,80,0.3); }
+.pillar-num { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; line-height: 1; color: rgba(220,160,40,0.25); letter-spacing: -0.04em; position: absolute; top: 22px; right: 28px; }
+.pillar-status { display: inline-flex; align-items: center; gap: 6px; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px; }
+.s-live { color: #C87010; } .s-soon { color: #B09060; }
+.sdot-live { width: 7px; height: 7px; border-radius: 50%; background: #F0A820; animation: pulse 2s ease-in-out infinite; }
+.sdot-soon { width: 6px; height: 6px; border-radius: 50%; background: #C8A868; opacity: 0.7; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+.pillar-title { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; color: #5C1E04; line-height: 1.0; margin-bottom: 12px; letter-spacing: -0.02em; }
+.pillar-card.soon .pillar-title { color: #9A6840; }
+.pillar-desc { font-size: 13.5px; line-height: 1.72; color: #7A4830; margin-bottom: 22px; }
+.pillar-card.soon .pillar-desc { color: #A88060; }
+.pillar-items { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+.pillar-items li { font-size: 12.5px; font-weight: 500; color: #9A6040; padding-left: 15px; position: relative; }
+.pillar-items li::before { content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); width:5px; height:5px; border-radius:50%; background:#F0A820; }
+.pillar-card.soon .pillar-items li { color: #B09060; }
+.pillar-card.soon .pillar-items li::before { background: #C8A868; opacity: 0.6; }
+.pillar-btn { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; padding: 11px 22px; border-radius: 8px; transition: all 0.2s; }
+.btn-live { background: #5C1E04; color: #FEF6E4; }
+.btn-live:hover { background: #7A2E0A; }
+.btn-soon { background: transparent; color: #A88060; border: 1px solid rgba(168,128,96,0.45); }
+.btn-soon:hover { border-color: #A88060; color: #8A6040; }
+
+/* EVENTS */
+.events-section { max-width: 860px; margin: 0 auto; padding: 96px 52px; }
+.event-row { display: grid; grid-template-columns: 80px 1fr auto; gap: 28px; align-items: center; padding: 28px 0; border-bottom: 1px solid rgba(220,160,60,0.25); text-decoration: none; color: inherit; transition: all 0.15s; }
+.event-row:first-of-type { border-top: 1px solid rgba(220,160,60,0.25); }
+.event-row:hover { background: rgba(253,232,160,0.4); margin: 0 -22px; padding: 28px 22px; border-radius: 12px; border-color: transparent; }
+.event-date { text-align: center; }
+.event-month { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B07040; }
+.event-day { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 600; color: #C87010; line-height: 1; letter-spacing: -0.03em; }
+.event-title { font-family: 'Cormorant Garamond', serif; font-size: 23px; font-weight: 600; color: #5C1E04; margin-bottom: 5px; line-height: 1.15; letter-spacing: -0.01em; }
+.event-desc { font-size: 13px; color: #9A6040; line-height: 1.55; margin-bottom: 5px; }
+.event-meta { font-size: 12px; color: #B07040; font-weight: 500; }
+.event-meta strong { color: #8A5030; font-weight: 700; }
+.event-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: rgba(240,168,32,0.2); color: #9A6010; white-space: nowrap; border: 0.5px solid rgba(220,150,30,0.3); }
+.events-foot { margin-top: 36px; text-align: center; font-size: 13px; color: #A88060; }
+.events-foot a { color: #C87010; text-decoration: none; font-weight: 700; border-bottom: 1px solid rgba(200,112,16,0.35); padding-bottom: 1px; }
+
+/* SIGNUP — sun over water bolder */
+.signup-section { position: relative; overflow: hidden; text-align: center; }
+.signup-bg { position: absolute; inset: 0; background-image: url('assets/images/sun-water.png'); background-size: cover; background-position: center; }
+.signup-bg::after { content:''; position:absolute; inset:0; background: rgba(255,248,225,0.55); }
+
+.signup-zone-1 { position: relative; z-index: 1; padding: 110px 52px 80px; border-bottom: 1px solid rgba(220,160,60,0.2); }
+.signup-inner { max-width: 540px; margin: 0 auto; }
+.signup-logo { width: 128px; margin: 0 auto 32px; }
+.signup-logo img { width: 100%; height: auto; }
+.signup-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C87A10; margin-bottom: 14px; }
+.signup-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 6vw, 72px); font-weight: 600; line-height: 0.97; color: #5C1E04; letter-spacing: -0.025em; margin-bottom: 8px; }
+.signup-h2 em { font-style: italic; font-weight: 300; color: #C84030; display: block; }
+.signup-sub { font-size: 15px; color: #8A5830; line-height: 1.7; margin-bottom: 36px; margin-top: 18px; }
+.signup-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+.signup-input { flex: 1; font-family: 'DM Sans', sans-serif; font-size: 14px; color: #5C2E0A; background: rgba(255,253,248,0.96); border: 1.5px solid rgba(220,150,40,0.5); border-radius: 9px; padding: 14px 18px; outline: none; transition: border-color 0.2s; }
+.signup-input:focus { border-color: #F0A820; }
+.signup-input::placeholder { color: #C8A070; }
+.btn-join { background: #5C1E04; color: #FEF6E4; font-family: 'DM Sans', sans-serif; font-size: 11.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; padding: 14px 24px; border-radius: 9px; border: none; cursor: pointer; white-space: nowrap; transition: background 0.2s, transform 0.15s; }
+.btn-join:hover { background: #7A2E0A; transform: translateY(-1px); }
+
+.signup-zone-2 { position: relative; z-index: 1; padding: 60px 52px 96px; }
+.wa-zone-inner { max-width: 340px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.wa-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #B07040; }
+.wa-logo-link { display: flex; flex-direction: column; align-items: center; gap: 14px; text-decoration: none; transition: transform 0.2s; }
+.wa-logo-link:hover { transform: translateY(-2px); }
+.wa-cta { display: inline-flex; align-items: center; gap: 9px; background: rgba(255,253,240,0.92); border: 1.5px solid rgba(220,150,40,0.4); border-radius: 100px; padding: 11px 22px; font-size: 13px; font-weight: 700; color: #7A4820; backdrop-filter: blur(4px); transition: all 0.2s; }
+.wa-cta:hover { border-color: rgba(220,150,40,0.7); }
+.wa-icon { width: 22px; height: 22px; border-radius: 6px; background: #25D366; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.wa-icon svg { width: 13px; height: 13px; fill: white; }
+.signup-hint { font-size: 11px; color: #C8A070; }
+
+/* FOOTER */
+footer { position: relative; overflow: hidden; border-top: 1px solid rgba(220,160,60,0.3); padding: 40px 52px; }
+.footer-bg { position: absolute; inset: 0; background-image: url('assets/images/copper-mesh.png'); background-size: cover; opacity: 0.06; }
+.footer-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.footer-logo-type { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; color: #A85E0A; }
+.footer-logo-type em { font-style: italic; font-weight: 300; color: #D9695C; }
+.footer-links { display: flex; gap: 22px; }
+.footer-links a { font-size: 11.5px; font-weight: 500; color: #A88060; text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: #C87010; }
+.footer-copy { font-size: 10.5px; color: #C8A070; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+.hero-kicker { animation: fadeUp 0.5s ease both; }
+h1 { animation: fadeUp 0.55s 0.08s ease both; }
+.hero-sub { animation: fadeUp 0.55s 0.16s ease both; }
+
+@media (max-width: 860px) {
+  nav { padding: 0 22px; }
+  .thesis { padding: 64px 22px; }
+  .thesis-grid { grid-template-columns: 1fr; gap: 24px; }
+  .thesis-num { display: none; }
+  .pillars-section, .events-section, .proof-strip { padding: 64px 22px; }
+  .pillars-grid, .proof-grid { grid-template-columns: 1fr; gap: 14px; }
+  .quote-strip { padding: 72px 22px; }
+  .signup-zone-1, .signup-zone-2 { padding-left: 22px; padding-right: 22px; }
+  .signup-form { flex-direction: column; }
+  footer { padding: 30px 22px; }
+  .event-row { grid-template-columns: 66px 1fr; }
+  .event-tag { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo-type">AI for <em>Social Good</em> NYC</a>
+  <div class="nav-right">
+    <a href="#proof" class="nav-link">Our Work</a>
+    <a href="#events" class="nav-link">Events</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="#join" class="nav-link">Join</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker"><div class="kicker-dot"></div>New York City · Est. 2026</div>
+    <h1>AI that serves<br><em>humanity.</em></h1>
+    <p class="hero-sub">Where builders meet mission. Where ideas become impact.</p>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div>scroll</div>
+</section>
+
+<!-- THESIS -->
+<section>
+  <div class="thesis">
+    <div class="thesis-grid">
+      <div>
+        <div class="thesis-label">Why we exist</div>
+        <div class="thesis-num">AI</div>
+      </div>
+      <div>
+        <h2 class="thesis-headline">AI has the potential to solve<br>the world's hardest problems —<br><em>if we build it right.</em></h2>
+        <p class="thesis-body">The tools exist. The data exists. What's missing is the bridge — between the people building AI and the people who need it most. Between technical capability and lived experience. Between speed-to-market and <strong>responsibility to communities</strong>.<br><br>We exist to close that gap. Not by slowing AI down, but by making sure the right people are in the room — asking the right questions, building with the right values, and directing resources toward the problems that actually matter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE — Rothko -->
+<section class="quote-strip">
+  <div class="quote-strip-bg"></div>
+  <div class="quote-strip-inner">
+    <span class="quote-mark">"</span>
+    <p class="pull-quote">AI could help close the gap between<br>the food insecure and the food secure —<br><strong>but only if we build it that way.</strong></p>
+    <div class="quote-source">World Food Programme · 2024</div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof-strip" id="proof">
+  <div class="proof-inner">
+    <div class="proof-header">
+      <div class="section-kicker">It's already working</div>
+      <h2 class="section-h2">AI solving <em>real problems,</em> right now.</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-domain"><div class="proof-domain-dot"></div>Disaster Response</div>
+        <span class="proof-stat">4 hrs</span>
+        <div class="proof-headline">Lahaina fire damage mapped same day</div>
+        <p class="proof-body">After the 2023 Maui wildfires, Microsoft AI for Good Lab assessed structural damage across the entire impact zone in four hours at 97% accuracy. The Red Cross had actionable maps the same day.</p>
+        <div class="proof-source">Microsoft AI for Good Lab</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-domain"><div class="proof-domain-dot"></div>Global Health</div>
+        <span class="proof-stat">350K</span>
+        <div class="proof-headline">Deaths a year that AI could help prevent</div>
+        <p class="proof-body">Anthropic and the Gates Foundation are using AI to accelerate HPV therapy screening — 90% of those 350,000 annual deaths occur in low- and middle-income countries where diagnostics are most limited.</p>
+        <div class="proof-source">Anthropic × Gates Foundation · 2024</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-domain"><div class="proof-domain-dot"></div>Education</div>
+        <span class="proof-stat">10M</span>
+        <div class="proof-headline">Students reached by AI-powered learning</div>
+        <p class="proof-body">Geekie's AI platform has reached 10 million students across 5,000 schools in Brazil, personalizing learning for children who would otherwise have no access to adaptive education tools.</p>
+        <div class="proof-source">WEF · AI for Good Report</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars-section">
+  <div class="pillars-header">
+    <div class="section-kicker">What we're building</div>
+    <h2 class="section-h2">Three ways to change the world,<br><em>harnessing AI for good.</em></h2>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar-card live">
+      <div class="pillar-num">01</div>
+      <div class="pillar-status s-live"><div class="sdot-live"></div>Live now</div>
+      <div class="pillar-title">Community</div>
+      <p class="pillar-desc">Founders, funders, engineers, and researchers — all in one room — using AI to solve the world's most pressing problems safely and responsibly.</p>
+      <ul class="pillar-items">
+        <li>Monthly Meetups</li>
+        <li>Panel Discussions</li>
+        <li>Hackathons</li>
+        <li>Workshops & Talks</li>
+      </ul>
+      <a href="#events" class="pillar-btn btn-live">See Upcoming Events</a>
+    </div>
+    <div class="pillar-card soon">
+      <div class="pillar-num">02</div>
+      <div class="pillar-status s-soon"><div class="sdot-soon"></div>Coming soon</div>
+      <div class="pillar-title">Incubator</div>
+      <p class="pillar-desc">A small, selective cohort investing in the next generation of social impact founders. Funding, mentorship, and the business acumen to build startups for good.</p>
+      <ul class="pillar-items">
+        <li>Cohort Funding</li>
+        <li>Idea Generation</li>
+        <li>Business Mentorship</li>
+        <li>Network Access</li>
+      </ul>
+      <a href="#join" class="pillar-btn btn-soon">Express Interest</a>
+    </div>
+    <div class="pillar-card soon">
+      <div class="pillar-num">03</div>
+      <div class="pillar-status s-soon"><div class="sdot-soon"></div>Coming soon</div>
+      <div class="pillar-title">Funders Circle</div>
+      <p class="pillar-desc">A curated group of social impact enthusiasts and angel investors backing founders solving the world's most pressing problems — with capital and conviction.</p>
+      <ul class="pillar-items">
+        <li>Curated Deal Flow</li>
+        <li>Co-investment Network</li>
+        <li>Impact Due Diligence</li>
+        <li>Founder Access</li>
+      </ul>
+      <a href="#join" class="pillar-btn btn-soon">Express Interest</a>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events-section" id="events">
+  <div class="proof-header" style="margin-bottom:44px;">
+    <div class="section-kicker">Upcoming events</div>
+  </div>
+  <a class="event-row" href="https://luma.com/idealist-nkwu" target="_blank" rel="noopener">
+    <div class="event-date"><div class="event-month">May</div><div class="event-day">26</div></div>
+    <div>
+      <div class="event-title">AI for Good: Imagine and Connect</div>
+      <div class="event-desc">A grounded look at the real costs and genuine possibilities of AI in the social sector, with Angela Ng and Ida Benedetto of Uncommon Places Design.</div>
+      <div class="event-meta"><strong>Tuesday, 6–8pm</strong> · Idealist.org HQ, NYC</div>
+    </div>
+    <span class="event-tag">Evening</span>
+  </a>
+  <a class="event-row" href="https://partiful.com/e/IwQrRKHdA83SveHTnf1X" target="_blank" rel="noopener">
+    <div class="event-date"><div class="event-month">Jun</div><div class="event-day">1</div></div>
+    <div>
+      <div class="event-title">AI for Good Meetup — #NYTechWeek</div>
+      <div class="event-desc">Structured networking for people working at the intersection of AI and social impact. Small groups by interest area — founders, funders, researchers, advocates.</div>
+      <div class="event-meta"><strong>Monday, 2pm</strong> · The Globe Bar, 158 E 23rd St, NYC</div>
+    </div>
+    <span class="event-tag">Meetup</span>
+  </a>
+  <div class="events-foot">More events coming. <a href="#join">Join to get notified.</a></div>
+</section>
+
+<!-- SIGNUP -->
+<section class="signup-section" id="join">
+  <div class="signup-bg"></div>
+
+  <div class="signup-zone-1">
+    <div class="signup-inner">
+      <div class="signup-logo">
+        <img src="assets/images/logo.png" alt="AI for Social Good" />
+      </div>
+      <div class="signup-kicker">Join us</div>
+      <h2 class="signup-h2">Find the room<br><em>worth being in.</em></h2>
+      <p class="signup-sub">Practitioners, funders, and researchers who believe AI's most important work is still ahead of us.</p>
+      <div class="signup-form">
+        <input class="signup-input" type="email" placeholder="your@email.com" />
+        <button class="btn-join">Join</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="signup-zone-2">
+    <div class="wa-zone-inner">
+      <div class="wa-label">Already in? Join the conversation</div>
+      <a class="wa-logo-link" href="https://chat.whatsapp.com/FUOT9wJdj7q9mhJ7PyxiX3?mode=gi_t" target="_blank" rel="noopener">
+        <div class="wa-cta">
+          <div class="wa-icon">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          Join our WhatsApp community
+        </div>
+      </a>
+      <div class="signup-hint">Free to join. No spam. Just people doing the work.</div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-bg"></div>
+  <div class="footer-inner">
+    <div class="footer-logo-type">AI for <em>Social Good</em> NYC</div>
+    <div class="footer-links">
+      <a href="#proof">Our Work</a>
+      <a href="#events">Events</a>
+      <a href="about.html">About</a>
+      <a href="https://chat.whatsapp.com/FUOT9wJdj7q9mhJ7PyxiX3?mode=gi_t" target="_blank">WhatsApp</a>
+      <a href="mailto:hello@aiforsocialgood.nyc">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
