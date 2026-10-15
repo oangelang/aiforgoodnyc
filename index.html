@@ -6,7 +6,7 @@
 <title>AI for Good NYC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -19,7 +19,7 @@ nav {
   background: rgba(255,253,248,0.88); backdrop-filter: blur(16px);
   border-bottom: 0.5px solid rgba(250,208,122,0.4);
 }
-.logo-type { font-family: 'Fredoka', sans-serif; font-size: 19px; font-weight: 600; color: #A85E0A; text-decoration: none; }
+.logo-type { font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; color: #A85E0A; text-decoration: none; }
 .logo-type b { font-weight: 700; color: #D9695C; }
 .nav-right { display: flex; align-items: center; gap: 28px; }
 .nav-link { font-size: 11.5px; font-weight: 700; color: #8C6050; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
@@ -32,9 +32,9 @@ nav {
 .hero-inner { position: relative; z-index: 1; padding: 0 24px; max-width: 820px; }
 .hero-kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C87A10; margin-bottom: 28px; }
 .kicker-dot { width: 7px; height: 7px; border-radius: 50%; background: #F5B445; }
-h1 { font-family: 'Fredoka', sans-serif; font-size: clamp(44px, 7vw, 84px); font-weight: 600; line-height: 0.94; color: #5C1E04; letter-spacing: -0.03em; margin-bottom: 8px; }
+h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(44px, 7vw, 84px); font-weight: 600; line-height: 0.94; color: #5C1E04; letter-spacing: -0.03em; margin-bottom: 8px; }
 h1 b { font-weight: 700; color: #C84030; display: block; font-size: clamp(38px, 5.5vw, 66px); }
-.hero-sub { font-family: 'Fredoka', sans-serif; font-size: clamp(19px, 2.4vw, 26px); font-weight: 500; color: #9A5830; line-height: 1.45; margin-top: 20px; }
+.hero-sub { font-family: 'Space Grotesk', sans-serif; font-size: clamp(19px, 2.4vw, 26px); font-weight: 500; color: #9A5830; line-height: 1.45; margin-top: 20px; }
 .scroll-hint { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(156,96,60,0.6); animation: bob 2.2s ease-in-out infinite; }
 @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(6px);} }
 .scroll-line { width: 0.5px; height: 36px; background: rgba(200,140,80,0.4); }
@@ -43,8 +43,8 @@ h1 b { font-weight: 700; color: #C84030; display: block; font-size: clamp(38px, 
 .thesis { background: #FFFDF8; padding: 96px 52px; max-width: 1100px; margin: 0 auto; }
 .thesis-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: center; }
 .thesis-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D4A020; margin-bottom: 14px; }
-.thesis-num { font-family: 'Fredoka', sans-serif; font-size: 120px; font-weight: 600; color: rgba(245,180,69,0.18); line-height: 1; letter-spacing: -0.05em; }
-.thesis-headline { font-family: 'Fredoka', sans-serif; font-size: clamp(26px, 3.5vw, 42px); font-weight: 600; color: #5C1E04; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
+.thesis-num { font-family: 'Space Grotesk', sans-serif; font-size: 120px; font-weight: 600; color: rgba(245,180,69,0.18); line-height: 1; letter-spacing: -0.05em; }
+.thesis-headline { font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 42px); font-weight: 600; color: #5C1E04; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
 .thesis-headline b { font-weight: 700; color: #C84030; }
 .thesis-body { font-size: 15px; line-height: 1.78; color: #7A4830; }
 .thesis-body strong { color: #5C1E04; font-weight: 700; }
@@ -54,8 +54,8 @@ h1 b { font-weight: 700; color: #C84030; display: block; font-size: clamp(38px, 
 .quote-strip-bg { position: absolute; inset: 0; background-image: url('assets/images/rothko.png'); background-size: cover; background-position: center; }
 .quote-strip-bg::after { content:''; position:absolute; inset:0; background: rgba(255,244,220,0.52); }
 .quote-strip-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-.quote-mark { font-family: 'Fredoka', sans-serif; font-size: 100px; font-weight: 300; color: rgba(200,64,48,0.3); line-height: 0.5; margin-bottom: 10px; display: block; }
-.pull-quote { font-family: 'Fredoka', sans-serif; font-size: clamp(24px, 3.5vw, 40px); font-weight: 500; color: #5C1E04; line-height: 1.3; margin-bottom: 28px; }
+.quote-mark { font-family: 'Space Grotesk', sans-serif; font-size: 100px; font-weight: 300; color: rgba(200,64,48,0.3); line-height: 0.5; margin-bottom: 10px; display: block; }
+.pull-quote { font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 3.5vw, 40px); font-weight: 500; color: #5C1E04; line-height: 1.3; margin-bottom: 28px; }
 .pull-quote strong { font-weight: 700; color: #A02010; }
 .quote-source { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B07040; }
 
@@ -64,15 +64,15 @@ h1 b { font-weight: 700; color: #C84030; display: block; font-size: clamp(38px, 
 .proof-inner { max-width: 1100px; margin: 0 auto; }
 .proof-header { margin-bottom: 48px; }
 .section-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #B07040; margin-bottom: 14px; }
-.section-h2 { font-family: 'Fredoka', sans-serif; font-size: clamp(28px, 3.8vw, 46px); font-weight: 600; line-height: 1.05; color: #5C1E04; letter-spacing: -0.02em; }
+.section-h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.8vw, 46px); font-weight: 600; line-height: 1.05; color: #5C1E04; letter-spacing: -0.02em; }
 .section-h2 b { font-weight: 700; color: #C84030; }
 .proof-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
 .proof-card { background: #FFFDF8; border: 1px solid rgba(210,150,50,0.4); border-radius: 16px; padding: 30px 28px; transition: transform 0.2s; }
 .proof-card:hover { transform: translateY(-3px); }
 .proof-domain { font-size: 9.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #B07040; margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
 .proof-domain-dot { width: 5px; height: 5px; border-radius: 50%; background: #F0A020; }
-.proof-stat { font-family: 'Fredoka', sans-serif; font-size: 44px; font-weight: 600; color: #C87010; letter-spacing: -0.03em; line-height: 1; margin-bottom: 8px; display: block; }
-.proof-headline { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 600; color: #5C1E04; line-height: 1.15; margin-bottom: 12px; letter-spacing: -0.01em; }
+.proof-stat { font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 600; color: #C87010; letter-spacing: -0.03em; line-height: 1; margin-bottom: 8px; display: block; }
+.proof-headline { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; color: #5C1E04; line-height: 1.15; margin-bottom: 12px; letter-spacing: -0.01em; }
 .proof-body { font-size: 13px; line-height: 1.7; color: #7A5030; margin-bottom: 16px; }
 .proof-source { font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B07040; }
 
@@ -84,13 +84,13 @@ h1 b { font-weight: 700; color: #C84030; display: block; font-size: clamp(38px, 
 .pillar-card:hover { transform: translateY(-4px); }
 .pillar-card.live { background: #FDE8A0; border: 1.5px solid rgba(210,150,30,0.6); }
 .pillar-card.soon { background: #FEF6E4; border: 1px solid rgba(220,170,80,0.3); }
-.pillar-num { font-family: 'Fredoka', sans-serif; font-size: 80px; font-weight: 300; line-height: 1; color: rgba(220,160,40,0.25); letter-spacing: -0.04em; position: absolute; top: 22px; right: 28px; }
+.pillar-num { font-family: 'Space Grotesk', sans-serif; font-size: 80px; font-weight: 300; line-height: 1; color: rgba(220,160,40,0.25); letter-spacing: -0.04em; position: absolute; top: 22px; right: 28px; }
 .pillar-status { display: inline-flex; align-items: center; gap: 6px; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px; }
 .s-live { color: #C87010; } .s-soon { color: #B09060; }
 .sdot-live { width: 7px; height: 7px; border-radius: 50%; background: #F0A820; animation: pulse 2s ease-in-out infinite; }
 .sdot-soon { width: 6px; height: 6px; border-radius: 50%; background: #C8A868; opacity: 0.7; }
 @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
-.pillar-title { font-family: 'Fredoka', sans-serif; font-size: 36px; font-weight: 600; color: #5C1E04; line-height: 1.0; margin-bottom: 12px; letter-spacing: -0.02em; }
+.pillar-title { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 600; color: #5C1E04; line-height: 1.0; margin-bottom: 12px; letter-spacing: -0.02em; }
 .pillar-card.soon .pillar-title { color: #9A6840; }
 .pillar-desc { font-size: 13.5px; line-height: 1.72; color: #7A4830; margin-bottom: 22px; }
 .pillar-card.soon .pillar-desc { color: #A88060; }
@@ -112,8 +112,8 @@ h1 b { font-weight: 700; color: #C84030; display: block; font-size: clamp(38px, 
 .event-row:hover { background: rgba(253,232,160,0.4); margin: 0 -22px; padding: 28px 22px; border-radius: 12px; border-color: transparent; }
 .event-date { text-align: center; }
 .event-month { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B07040; }
-.event-day { font-family: 'Fredoka', sans-serif; font-size: 46px; font-weight: 600; color: #C87010; line-height: 1; letter-spacing: -0.03em; }
-.event-title { font-family: 'Fredoka', sans-serif; font-size: 23px; font-weight: 600; color: #5C1E04; margin-bottom: 5px; line-height: 1.15; letter-spacing: -0.01em; }
+.event-day { font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 600; color: #C87010; line-height: 1; letter-spacing: -0.03em; }
+.event-title { font-family: 'Space Grotesk', sans-serif; font-size: 23px; font-weight: 600; color: #5C1E04; margin-bottom: 5px; line-height: 1.15; letter-spacing: -0.01em; }
 .event-desc { font-size: 13px; color: #9A6040; line-height: 1.55; margin-bottom: 5px; }
 .event-meta { font-size: 12px; color: #B07040; font-weight: 500; }
 .event-meta strong { color: #8A5030; font-weight: 700; }
@@ -131,7 +131,7 @@ h1 b { font-weight: 700; color: #C84030; display: block; font-size: clamp(38px, 
 .signup-logo { width: 128px; margin: 0 auto 32px; }
 .signup-logo img { width: 100%; height: auto; }
 .signup-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C87A10; margin-bottom: 14px; }
-.signup-h2 { font-family: 'Fredoka', sans-serif; font-size: clamp(36px, 5vw, 58px); font-weight: 600; line-height: 0.97; color: #5C1E04; letter-spacing: -0.025em; margin-bottom: 8px; }
+.signup-h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 5vw, 58px); font-weight: 600; line-height: 0.97; color: #5C1E04; letter-spacing: -0.025em; margin-bottom: 8px; }
 .signup-h2 b { font-weight: 700; color: #C84030; display: block; }
 .signup-sub { font-size: 15px; color: #8A5830; line-height: 1.7; margin-bottom: 36px; margin-top: 18px; }
 .signup-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
@@ -156,12 +156,23 @@ h1 b { font-weight: 700; color: #C84030; display: block; font-size: clamp(38px, 
 footer { position: relative; overflow: hidden; border-top: 1px solid rgba(220,160,60,0.3); padding: 40px 52px; }
 .footer-bg { position: absolute; inset: 0; background-image: url('assets/images/copper-mesh.png'); background-size: cover; opacity: 0.06; }
 .footer-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
-.footer-logo-type { font-family: 'Fredoka', sans-serif; font-size: 17px; font-weight: 600; color: #A85E0A; }
+.footer-logo-type { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: #A85E0A; }
 .footer-logo-type b { font-weight: 700; color: #D9695C; }
 .footer-links { display: flex; gap: 22px; }
 .footer-links a { font-size: 11.5px; font-weight: 500; color: #A88060; text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: #C87010; }
 .footer-copy { font-size: 10.5px; color: #C8A070; }
+
+/* REBRAND */
+.rebrand-section { background: #FEF6E4; border-top: 1px solid rgba(220,160,60,0.3); border-bottom: 1px solid rgba(220,160,60,0.3); padding: 80px 52px; }
+.rebrand-inner { max-width: 720px; margin: 0 auto; }
+.rebrand-headline { font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); font-weight: 600; color: #5C1E04; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; }
+.rebrand-headline b { font-weight: 700; color: #C84030; }
+.rebrand-link { color: #C84030; text-decoration: none; border-bottom: 2px solid rgba(200,64,48,0.3); transition: border-color 0.2s; }
+.rebrand-link:hover { border-color: #C84030; }
+.rebrand-body { font-size: 15px; line-height: 1.78; color: #7A4830; margin-bottom: 16px; }
+.rebrand-cta { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #C84030; text-decoration: none; margin-top: 8px; border-bottom: 1px solid rgba(200,64,48,0.35); padding-bottom: 2px; transition: color 0.2s; }
+.rebrand-cta:hover { color: #5C1E04; }
 
 @keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
 .hero-kicker { animation: fadeUp 0.5s ease both; }
@@ -176,18 +187,49 @@ h1 { animation: fadeUp 0.55s 0.08s ease both; }
   .pillars-section, .events-section, .proof-strip { padding: 64px 22px; }
   .pillars-grid, .proof-grid { grid-template-columns: 1fr; gap: 14px; }
   .quote-strip { padding: 72px 22px; }
+  .rebrand-section { padding: 56px 22px; }
   .signup-zone-1, .signup-zone-2 { padding-left: 22px; padding-right: 22px; }
   .signup-form { flex-direction: column; }
   footer { padding: 30px 22px; }
   .event-row { grid-template-columns: 66px 1fr; }
   .event-tag { display: none; }
 }
+
+/* MOBILE NAV */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; z-index: 101; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: #8C6050; border-radius: 1px; transition: all 0.3s; }
+.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; }
+  .nav-right {
+    display: none; position: fixed; top: 62px; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background: rgba(255,253,248,0.97); backdrop-filter: blur(20px);
+    padding: 12px 0; border-bottom: 1px solid rgba(250,208,122,0.4);
+    box-shadow: 0 8px 32px rgba(92,30,4,0.08);
+  }
+  .nav-right.open { display: flex; }
+  .nav-right .nav-link {
+    display: block; width: 100%; padding: 14px 24px;
+    font-size: 13px; letter-spacing: 0.06em;
+  }
+  .nav-right .nav-link:hover { background: rgba(253,232,160,0.3); }
+
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-links { flex-wrap: wrap; gap: 14px 18px; }
+  .logo-type { font-size: 17px; }
+}
+
 </style>
 </head>
 <body>
 
 <nav>
   <a href="#" class="logo-type">AI for <b>Good</b> NYC</a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-right">
     <a href="#proof" class="nav-link">Our Work</a>
     <a href="/framework" class="nav-link">Framework</a>
@@ -321,25 +363,27 @@ h1 { animation: fadeUp 0.55s 0.08s ease both; }
   <div class="proof-header" style="margin-bottom:44px;">
     <div class="section-kicker">Upcoming events</div>
   </div>
-  <a class="event-row" href="https://luma.com/idealist-nkwu" target="_blank" rel="noopener">
-    <div class="event-date"><div class="event-month">May</div><div class="event-day">26</div></div>
+  <a class="event-row" href="https://luma.com/y2yl4ut3" target="_blank" rel="noopener">
+    <div class="event-date"><div class="event-month">Oct</div><div class="event-day">21</div></div>
     <div>
-      <div class="event-title">AI for Good: Imagine and Connect</div>
-      <div class="event-desc">A grounded look at the real costs and genuine possibilities of AI in the social sector, with Angela Ng and Ida Benedetto of Uncommon Places Design.</div>
-      <div class="event-meta"><strong>Tuesday, 6–8pm</strong> · Idealist.org HQ, NYC</div>
+      <div class="event-title">Humanity in the Room: AI for Good Walk</div>
+      <div class="event-desc">We walk the west side of Manhattan at sunset, stopping three times for speakers doing honest, grounded work at the intersection of AI, climate, and philanthropy. In between, we mix up who we're walking with. Rain location is Pier 57.</div>
+      <div class="event-meta"><strong>Wednesday, 5:30–7:30pm</strong> · West Side, Manhattan</div>
     </div>
-    <span class="event-tag">Evening</span>
-  </a>
-  <a class="event-row" href="https://partiful.com/e/IwQrRKHdA83SveHTnf1X" target="_blank" rel="noopener">
-    <div class="event-date"><div class="event-month">Jun</div><div class="event-day">1</div></div>
-    <div>
-      <div class="event-title">AI for Good Meetup — #NYTechWeek</div>
-      <div class="event-desc">Structured networking for people working at the intersection of AI and social impact. Small groups by interest area — founders, funders, researchers, advocates.</div>
-      <div class="event-meta"><strong>Monday, 2pm</strong> · The Globe Bar, 158 E 23rd St, NYC</div>
-    </div>
-    <span class="event-tag">Meetup</span>
+    <span class="event-tag">Walk</span>
   </a>
   <div class="events-foot">More events coming. <a href="#join">Join to get notified.</a></div>
+</section>
+
+<!-- REBRAND -->
+<section class="rebrand-section">
+  <div class="rebrand-inner">
+    <div class="section-kicker">We're evolving</div>
+    <h2 class="rebrand-headline">AI for Good NYC is becoming<br><b><a href="https://www.humanityintheroom.org/" target="_blank" rel="noopener" class="rebrand-link">Humanity in the Room</a></b></h2>
+    <p class="rebrand-body">"AI for Good" is also the name of the UN's ITU program, and we didn't want to be confused with it. We also outgrew: our work now reaches beyond New York, and beyond community events, into education and consulting for organizations deciding how to use AI.</p>
+    <p class="rebrand-body">The new name is a play on "human in the loop." Before AI goes into a clinic, a classroom, or a grant portfolio, someone has to be in the room asking who it serves and what happens when it's wrong. That's the conversation we host.</p>
+    <a href="https://www.humanityintheroom.org/" target="_blank" rel="noopener" class="rebrand-cta">Visit humanityintheroom.org &rarr;</a>
+  </div>
 </section>
 
 <!-- SIGNUP -->
@@ -353,23 +397,8 @@ h1 { animation: fadeUp 0.55s 0.08s ease both; }
       </div>
       <div class="signup-kicker">Join us</div>
       <h2 class="signup-h2">Find the room<br><b>worth being in.</b></h2>
-      <p class="signup-sub">Practitioners, funders, and researchers who believe AI's most important work is still ahead of us.</p>
+      <p class="signup-sub">Practitioners, funders, and researchers who believe AI's most important work is still ahead of us. Members are free to join. No spam. Just people doing the work.</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-QLh4zXq_ub8UDP38LhhJg8EYdls9Ajfo30V5DnivuKe2Lg/viewform" target="_blank" rel="noopener" class="btn-join" style="display:inline-block;text-decoration:none;text-align:center;">Join the Community</a>
-    </div>
-  </div>
-
-  <div class="signup-zone-2">
-    <div class="wa-zone-inner">
-      <div class="wa-label">Already in? Join the conversation</div>
-      <a class="wa-logo-link" href="https://chat.whatsapp.com/FUOT9wJdj7q9mhJ7PyxiX3?mode=gi_t" target="_blank" rel="noopener">
-        <div class="wa-cta">
-          <div class="wa-icon">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </div>
-          Join our WhatsApp community
-        </div>
-      </a>
-      <div class="signup-hint">Free to join. No spam. Just people doing the work.</div>
     </div>
   </div>
 
@@ -390,6 +419,21 @@ h1 { animation: fadeUp 0.55s 0.08s ease both; }
     <div class="footer-copy">© 2026</div>
   </div>
 </footer>
+
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.nav-right').classList.toggle('open');
+});
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-right .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-toggle').classList.remove('active');
+    document.querySelector('.nav-right').classList.remove('open');
+  });
+});
+</script>
 
 </body>
 </html>

@@ -6,7 +6,7 @@
 <title>Framework — AI for Good NYC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -19,7 +19,7 @@ nav {
   background: rgba(255,253,248,0.88); backdrop-filter: blur(16px);
   border-bottom: 0.5px solid rgba(250,208,122,0.4);
 }
-.logo-type { font-family: 'Fredoka', sans-serif; font-size: 19px; font-weight: 600; color: #A85E0A; text-decoration: none; }
+.logo-type { font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; color: #A85E0A; text-decoration: none; }
 .logo-type b { font-weight: 700; color: #D9695C; }
 .nav-right { display: flex; align-items: center; gap: 28px; }
 .nav-link { font-size: 11.5px; font-weight: 700; color: #8C6050; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
@@ -28,17 +28,17 @@ nav {
 
 /* HERO */
 .fw-hero { position: relative; min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
-.fw-hero-bg { position: absolute; inset: 0; background-image: url('assets/images/rothko.png'); background-size: cover; background-position: center; }
+.fw-hero-bg { position: absolute; inset: 0; background-image: url('../assets/images/rothko.png'); background-size: cover; background-position: center; }
 .fw-hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(255,244,220,0.55); }
 .fw-hero-inner { position: relative; z-index: 1; max-width: 720px; padding: 120px 24px 60px; }
 .fw-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C87A10; margin-bottom: 20px; }
-.fw-h1 { font-family: 'Fredoka', sans-serif; font-size: clamp(30px, 5vw, 52px); font-weight: 600; line-height: 1.08; color: #5C1E04; letter-spacing: -0.025em; margin-bottom: 16px; }
+.fw-h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 5vw, 52px); font-weight: 600; line-height: 1.08; color: #5C1E04; letter-spacing: -0.025em; margin-bottom: 16px; }
 .fw-h1 b { font-weight: 700; color: #C84030; display: block; }
 .fw-subtitle { font-size: 15px; color: #8A5830; line-height: 1.7; }
 
 /* INTRO */
 .fw-intro { max-width: 780px; margin: 0 auto; padding: 72px 52px; }
-.fw-intro-title { font-family: 'Fredoka', sans-serif; font-size: 28px; font-weight: 600; color: #5C1E04; margin-bottom: 20px; }
+.fw-intro-title { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #5C1E04; margin-bottom: 20px; }
 .fw-intro p { font-size: 14.5px; line-height: 1.78; color: #7A4830; margin-bottom: 16px; }
 .fw-intro p:last-child { margin-bottom: 0; }
 
@@ -54,7 +54,7 @@ nav {
 .pillar-emoji { font-size: 26px; flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: #FEF6E4; border-radius: 12px; }
 .pillar-info { flex: 1; }
 .pillar-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #B07040; margin-bottom: 4px; }
-.pillar-name { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 600; color: #5C1E04; line-height: 1.2; }
+.pillar-name { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; color: #5C1E04; line-height: 1.2; }
 .pillar-chevron { width: 20px; height: 20px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: transform 0.25s ease; color: #B07040; }
 .pillar-details[open] .pillar-chevron { transform: rotate(180deg); }
 .pillar-body { padding: 4px 28px 28px; }
@@ -65,7 +65,7 @@ nav {
 .question-summary { display: flex; align-items: center; gap: 10px; padding: 12px 0; cursor: pointer; list-style: none; user-select: none; }
 .question-summary::-webkit-details-marker { display: none; }
 .question-summary::marker { display: none; content: ''; }
-.question-title { font-family: 'Fredoka', sans-serif; font-size: 19px; font-weight: 600; color: #5C1E04; flex: 1; line-height: 1.3; }
+.question-title { font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; color: #5C1E04; flex: 1; line-height: 1.3; }
 .question-flag { font-size: 11px; flex-shrink: 0; background: rgba(200,64,48,0.08); padding: 3px 10px; border-radius: 6px; color: #C84030; font-weight: 700; letter-spacing: 0.04em; }
 .question-chevron { width: 16px; height: 16px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease; color: #C8A070; }
 .question-details[open] .question-chevron { transform: rotate(90deg); }
@@ -74,18 +74,18 @@ nav {
 /* FINAL NOTE */
 .fw-final { max-width: 780px; margin: 0 auto; padding: 0 52px 80px; }
 .fw-final-inner { border-top: 1px solid rgba(220,160,60,0.3); padding-top: 40px; }
-.fw-final-title { font-family: 'Fredoka', sans-serif; font-size: 24px; font-weight: 600; color: #5C1E04; margin-bottom: 16px; }
+.fw-final-title { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600; color: #5C1E04; margin-bottom: 16px; }
 .fw-final p { font-size: 14.5px; line-height: 1.78; color: #7A4830; margin-bottom: 14px; }
 .fw-final p:last-child { margin-bottom: 0; }
 
 /* CTA */
 .fw-cta { position: relative; overflow: hidden; text-align: center; }
-.fw-cta-bg { position: absolute; inset: 0; background-image: url('assets/images/sun-water.png'); background-size: cover; background-position: center; }
+.fw-cta-bg { position: absolute; inset: 0; background-image: url('../assets/images/sun-water.png'); background-size: cover; background-position: center; }
 .fw-cta-bg::after { content: ''; position: absolute; inset: 0; background: rgba(255,248,225,0.55); }
 .fw-cta-inner { position: relative; z-index: 1; padding: 90px 52px; max-width: 600px; margin: 0 auto; }
 .cta-logo { width: 100px; margin: 0 auto 24px; }
 .cta-logo img { width: 100%; height: auto; }
-.cta-h2 { font-family: 'Fredoka', sans-serif; font-size: clamp(28px, 3.8vw, 42px); font-weight: 600; line-height: 1.05; color: #5C1E04; letter-spacing: -0.025em; margin-bottom: 14px; }
+.cta-h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.8vw, 42px); font-weight: 600; line-height: 1.05; color: #5C1E04; letter-spacing: -0.025em; margin-bottom: 14px; }
 .cta-h2 b { font-weight: 700; color: #C84030; display: block; }
 .cta-body { font-size: 15px; color: #8A5830; line-height: 1.7; margin-bottom: 28px; }
 .cta-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -97,9 +97,9 @@ nav {
 
 /* FOOTER */
 footer { position: relative; overflow: hidden; border-top: 1px solid rgba(220,160,60,0.3); padding: 40px 52px; }
-.footer-bg { position: absolute; inset: 0; background-image: url('assets/images/copper-mesh.png'); background-size: cover; opacity: 0.06; }
+.footer-bg { position: absolute; inset: 0; background-image: url('../assets/images/copper-mesh.png'); background-size: cover; opacity: 0.06; }
 .footer-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
-.footer-logo-type { font-family: 'Fredoka', sans-serif; font-size: 17px; font-weight: 600; color: #A85E0A; }
+.footer-logo-type { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: #A85E0A; }
 .footer-logo-type b { font-weight: 700; color: #D9695C; }
 .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
 .footer-links a { font-size: 11.5px; font-weight: 500; color: #A88060; text-decoration: none; transition: color 0.2s; }
@@ -127,12 +127,42 @@ footer { position: relative; overflow: hidden; border-top: 1px solid rgba(220,16
   .fw-cta-inner { padding: 64px 22px; }
   footer { padding: 30px 22px; }
 }
+
+/* MOBILE NAV */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; z-index: 101; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: #8C6050; border-radius: 1px; transition: all 0.3s; }
+.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; }
+  .nav-right {
+    display: none; position: fixed; top: 62px; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background: rgba(255,253,248,0.97); backdrop-filter: blur(20px);
+    padding: 12px 0; border-bottom: 1px solid rgba(250,208,122,0.4);
+    box-shadow: 0 8px 32px rgba(92,30,4,0.08);
+  }
+  .nav-right.open { display: flex; }
+  .nav-right .nav-link {
+    display: block; width: 100%; padding: 14px 24px;
+    font-size: 13px; letter-spacing: 0.06em;
+  }
+  .nav-right .nav-link:hover { background: rgba(253,232,160,0.3); }
+
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-links { flex-wrap: wrap; gap: 14px 18px; }
+  .logo-type { font-size: 17px; }
+}
+
 </style>
 </head>
 <body>
 
 <nav>
   <a href="/" class="logo-type">AI for <b>Good</b> NYC</a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-right">
     <a href="/#proof" class="nav-link">Our Work</a>
     <a href="/framework" class="nav-link active">Framework</a>
@@ -449,7 +479,7 @@ footer { position: relative; overflow: hidden; border-top: 1px solid rgba(220,16
   <div class="fw-cta-bg"></div>
   <div class="fw-cta-inner">
     <div class="cta-logo">
-      <img src="assets/images/logo.png" alt="AI for Good" />
+      <img src="../assets/images/logo.png" alt="AI for Good" />
     </div>
     <h2 class="cta-h2">Put this into<br><b>practice.</b></h2>
     <p class="cta-body">Join a community of practitioners working through these questions together.</p>
@@ -475,6 +505,21 @@ footer { position: relative; overflow: hidden; border-top: 1px solid rgba(220,16
     <div class="footer-copy">&copy; 2026</div>
   </div>
 </footer>
+
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.nav-right').classList.toggle('open');
+});
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-right .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-toggle').classList.remove('active');
+    document.querySelector('.nav-right').classList.remove('open');
+  });
+});
+</script>
 
 </body>
 </html>

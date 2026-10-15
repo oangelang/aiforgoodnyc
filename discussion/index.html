@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discussion Questions · AI for Good NYC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #FFFDF8; color: #7A4830; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 62px; padding: 0 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,253,248,0.88); backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid rgba(250,208,122,0.4);
+}
+.logo-type { font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; color: #A85E0A; text-decoration: none; }
+.logo-type b { font-weight: 700; color: #D9695C; }
+.nav-right { display: flex; align-items: center; gap: 28px; }
+.nav-link { font-size: 11.5px; font-weight: 700; color: #8C6050; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+.nav-link:hover { color: #D9891A; }
+
+footer { position: relative; overflow: hidden; border-top: 1px solid rgba(220,160,60,0.3); padding: 40px 52px; }
+.footer-bg { position: absolute; inset: 0; background-image: url('../assets/images/copper-mesh.png'); background-size: cover; opacity: 0.06; }
+.footer-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.footer-logo-type { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: #A85E0A; }
+.footer-logo-type b { font-weight: 700; color: #D9695C; }
+.footer-links { display: flex; gap: 22px; }
+.footer-links a { font-size: 11.5px; font-weight: 500; color: #A88060; text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: #C87010; }
+.footer-copy { font-size: 10.5px; color: #C8A070; }
+
+/* MOBILE NAV */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; z-index: 101; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: #8C6050; border-radius: 1px; transition: all 0.3s; }
+.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* PAGE CONTENT */
+.page-content { padding: 120px 52px 96px; max-width: 860px; margin: 0 auto; }
+
+.page-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 5vw, 52px); font-weight: 600; color: #5C1E04; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 48px; }
+.page-title b { font-weight: 700; color: #C84030; }
+
+/* DRAW CARD */
+.draw-card {
+  background: #FDE8A0; border: 1.5px solid rgba(210,150,30,0.6);
+  border-radius: 20px; padding: 48px 40px; margin-bottom: 64px;
+  position: relative; overflow: hidden;
+}
+.draw-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #B07040; margin-bottom: 24px; display: flex; align-items: center; gap: 8px; }
+.draw-dot { width: 7px; height: 7px; border-radius: 50%; background: #F0A820; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+.draw-question {
+  font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px, 3vw, 32px);
+  font-weight: 600; color: #5C1E04; line-height: 1.25; letter-spacing: -0.01em;
+  margin-bottom: 32px; min-height: 80px;
+}
+.draw-btn {
+  background: #5C1E04; color: #FEF6E4; font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+  padding: 13px 24px; border-radius: 9px; border: none; cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.draw-btn:hover { background: #7A2E0A; transform: translateY(-1px); }
+.draw-num {
+  font-family: 'Space Grotesk', sans-serif; font-size: 120px; font-weight: 300;
+  color: rgba(220,160,40,0.18); line-height: 1; letter-spacing: -0.04em;
+  position: absolute; top: 20px; right: 30px;
+}
+
+/* FILTER TABS */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+.filter-tab {
+  font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 18px;
+  border-radius: 100px; border: 1px solid rgba(220,150,40,0.4);
+  background: transparent; color: #9A6040; cursor: pointer;
+  transition: all 0.2s; white-space: nowrap;
+}
+.filter-tab:hover { border-color: rgba(220,150,40,0.7); color: #7A4820; }
+.filter-tab.active { background: #5C1E04; color: #FEF6E4; border-color: #5C1E04; }
+
+/* QUESTION GROUPS */
+.question-group { margin-bottom: 48px; }
+.group-header {
+  font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: #B07040;
+  margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(220,160,60,0.25);
+  display: flex; align-items: center; gap: 10px;
+}
+.group-num {
+  font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600;
+  color: #C87010; background: rgba(240,168,32,0.15); border-radius: 4px;
+  padding: 2px 7px; letter-spacing: 0;
+}
+.question-item {
+  padding: 20px 0; border-bottom: 1px solid rgba(220,160,60,0.15);
+  font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 500;
+  color: #5C1E04; line-height: 1.45; letter-spacing: -0.01em;
+}
+.question-item:last-child { border-bottom: none; }
+.funder-tag {
+  display: inline-block; font-family: 'DM Sans', sans-serif;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 100px; background: rgba(240,168,32,0.2);
+  color: #9A6010; border: 0.5px solid rgba(220,150,30,0.3);
+  margin-left: 10px; vertical-align: middle;
+}
+
+@media (max-width: 860px) {
+  nav { padding: 0 22px; }
+  .page-content { padding: 100px 22px 64px; }
+  .draw-card { padding: 36px 24px; }
+  .draw-num { font-size: 80px; top: 12px; right: 16px; }
+  footer { padding: 30px 22px; }
+}
+
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; }
+  .nav-right {
+    display: none; position: fixed; top: 62px; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background: rgba(255,253,248,0.97); backdrop-filter: blur(20px);
+    padding: 12px 0; border-bottom: 1px solid rgba(250,208,122,0.4);
+    box-shadow: 0 8px 32px rgba(92,30,4,0.08);
+  }
+  .nav-right.open { display: flex; }
+  .nav-right .nav-link {
+    display: block; width: 100%; padding: 14px 24px;
+    font-size: 13px; letter-spacing: 0.06em;
+  }
+  .nav-right .nav-link:hover { background: rgba(253,232,160,0.3); }
+
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-links { flex-wrap: wrap; gap: 14px 18px; }
+  .logo-type { font-size: 17px; }
+
+  .draw-question { font-size: 20px; min-height: 60px; }
+  .filter-bar { gap: 6px; }
+  .filter-tab { font-size: 11px; padding: 7px 14px; }
+  .question-item { font-size: 17px; padding: 16px 0; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo-type">AI for <b>Good</b> NYC</a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-right">
+    <a href="/#proof" class="nav-link">Our Work</a>
+    <a href="/framework" class="nav-link">Framework</a>
+    <a href="/#events" class="nav-link">Events</a>
+    <a href="/about" class="nav-link">About</a>
+    <a href="/#join" class="nav-link">Join</a>
+  </div>
+</nav>
+
+<main class="page-content">
+
+  <h1 class="page-title">Discussion <b>questions</b></h1>
+
+  <div class="draw-card">
+    <div class="draw-num">?</div>
+    <div class="draw-label"><div class="draw-dot"></div>Draw a question</div>
+    <div class="draw-question" id="drawn-question">What is a problem you want to see solved?</div>
+    <button class="draw-btn" id="draw-btn">Draw another</button>
+  </div>
+
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="personal">Personal &amp; practice</button>
+    <button class="filter-tab" data-filter="impact">Impact &amp; metrics</button>
+    <button class="filter-tab" data-filter="hard">Hard truths</button>
+    <button class="filter-tab" data-filter="workplace">Workplace &amp; structure</button>
+    <button class="filter-tab" data-filter="vision">Vision &amp; governance</button>
+  </div>
+
+  <div id="questions-list">
+
+    <div class="question-group" data-group="personal">
+      <div class="group-header"><span class="group-num">01</span> Personal &amp; practice</div>
+      <div class="question-item">What is a problem you want to see solved?</div>
+      <div class="question-item">What is an example of AI for Good that you would like to share with others?</div>
+      <div class="question-item">Do you use AI in your workflows already? Why or why not?</div>
+      <div class="question-item">Do you have an AI policy?</div>
+      <div class="question-item">What resources do you use to find news on AI, or ethics and frameworks around it?</div>
+      <div class="question-item">Do you think about the sustainability and ethics of AI as you decide what tool to use?</div>
+    </div>
+
+    <div class="question-group" data-group="impact">
+      <div class="group-header"><span class="group-num">02</span> Impact &amp; metrics</div>
+      <div class="question-item">How do you think about measuring impact in your AI projects? What metrics actually matter to you?</div>
+      <div class="question-item">Do you think AI can help you scale your impact?</div>
+    </div>
+
+    <div class="question-group" data-group="hard">
+      <div class="group-header"><span class="group-num">03</span> Hard truths</div>
+      <div class="question-item">What's a well-intentioned AI for Good project that failed or caused harm? What went wrong, and was it preventable?</div>
+      <div class="question-item">What conversations aren't being had that we need to bring forth around AI and impact?</div>
+      <div class="question-item">What do you see as the biggest issues with AI deployment?</div>
+      <div class="question-item">Do you think finding worthwhile problems to solve is a friction point in deploying AI for Good?</div>
+    </div>
+
+    <div class="question-group" data-group="workplace">
+      <div class="group-header"><span class="group-num">04</span> Workplace &amp; structure</div>
+      <div class="question-item">What is your take on companies forcing their employees to use AI?</div>
+      <div class="question-item">Should there be an age at which we start introducing AI use, and why?</div>
+      <div class="question-item">Funders: what characteristics do you look for in backing an AI company in a landscape that's constantly changing?<span class="funder-tag">For funders</span></div>
+    </div>
+
+    <div class="question-group" data-group="vision">
+      <div class="group-header"><span class="group-num">05</span> Vision &amp; governance</div>
+      <div class="question-item">If AI for Good fulfills its potential over the next ten years, what does that actually look like? Be specific: what exists that doesn't exist now?</div>
+      <div class="question-item">How can we restructure AI development and deployment to serve rather than exploit human creativity?</div>
+      <div class="question-item">How can AI systems support human and environmental resilience rather than enabling surveillance and control?</div>
+      <div class="question-item">What laws, institutions, or incentives are needed to ensure AI augments human capabilities instead of taking away jobs?</div>
+      <div class="question-item">What needs to happen to give society as a whole, rather than a few powerful players, the deciding voice on what kinds of AI get developed and how they're used?</div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-bg"></div>
+  <div class="footer-inner">
+    <div class="footer-logo-type">AI for <b>Good</b> NYC</div>
+    <div class="footer-links">
+      <a href="/#proof">Our Work</a>
+      <a href="/framework">Framework</a>
+      <a href="/#events">Events</a>
+      <a href="/about">About</a>
+      <a href="https://chat.whatsapp.com/FUOT9wJdj7q9mhJ7PyxiX3?mode=gi_t" target="_blank">WhatsApp</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2026</div>
+  </div>
+</footer>
+
+<script>
+var questions = document.querySelectorAll('.question-item');
+var allQuestions = [];
+questions.forEach(function(q) { allQuestions.push(q.textContent.replace('For funders', '').trim()); });
+
+var lastDrawn = -1;
+document.getElementById('draw-btn').addEventListener('click', function() {
+  var idx;
+  do { idx = Math.floor(Math.random() * allQuestions.length); } while (idx === lastDrawn && allQuestions.length > 1);
+  lastDrawn = idx;
+  document.getElementById('drawn-question').textContent = allQuestions[idx];
+});
+
+// Draw a random one on load
+(function() {
+  var idx = Math.floor(Math.random() * allQuestions.length);
+  lastDrawn = idx;
+  document.getElementById('drawn-question').textContent = allQuestions[idx];
+})();
+
+// Filter tabs
+var tabs = document.querySelectorAll('.filter-tab');
+var groups = document.querySelectorAll('.question-group');
+
+tabs.forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    tabs.forEach(function(t) { t.classList.remove('active'); });
+    tab.classList.add('active');
+    var filter = tab.getAttribute('data-filter');
+    groups.forEach(function(g) {
+      if (filter === 'all' || g.getAttribute('data-group') === filter) {
+        g.style.display = '';
+      } else {
+        g.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Mobile nav
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.nav-right').classList.toggle('open');
+});
+document.querySelectorAll('.nav-right .nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.querySelector('.nav-toggle').classList.remove('active');
+    document.querySelector('.nav-right').classList.remove('open');
+  });
+});
+</script>
+
+</body>
+</html>
